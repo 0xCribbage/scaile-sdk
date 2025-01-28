@@ -1,0 +1,52 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment directories
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Package distribution files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and database files
+*.log
+*.sqlite3
+
+# Configuration files
+*.env
+*.env.*
+*.ini
+
+# Coverage reports
+.coverage
+coverage.xml
+nosetests.xml
+pytest.xml
+*.cover
+
+# Python test data
+*.tox/
+*.nox/
+*.coverage/
+*.hypothesis/
+
+# Secrets or sensitive information files (adjust based on actual usage)
+config/secrets/

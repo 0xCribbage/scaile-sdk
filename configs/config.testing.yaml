@@ -1,0 +1,16 @@
+api:
+  base_url: "http://testing-api.scaile.com"
+  version: "v1"
+  timeout: 10
+  
+annotation:
+  batch_size: 50
+  max_retries: 2
+  
+storage:
+  type: "memory"
+  path: "test/data"
+  
+rewards:
+  enabled: false
+  calculation_method: "linear"

@@ -1,0 +1,53 @@
+# configs/config.development.yaml
+api:
+  base_url: "http://localhost:8000"
+  version: "v1"
+  timeout: 30
+  
+annotation:
+  batch_size: 100
+  max_retries: 3
+  
+storage:
+  type: "local"
+  path: "data/annotations"
+  
+rewards:
+  enabled: true
+  calculation_method: "linear"
+
+# configs/config.testing.yaml
+api:
+  base_url: "http://testing-api.scaile.com"
+  version: "v1"
+  timeout: 10
+  
+annotation:
+  batch_size: 50
+  max_retries: 2
+  
+storage:
+  type: "memory"
+  path: "test/data"
+  
+rewards:
+  enabled: false
+  calculation_method: "linear"
+
+# configs/config.production.yaml
+api:
+  base_url: "https://api.scaile.com"
+  version: "v1"
+  timeout: 60
+  
+annotation:
+  batch_size: 200
+  max_retries: 5
+  
+storage:
+  type: "s3"
+  path: "annotations"
+  
+rewards:
+  enabled: true
+  calculation_method: "exponential"

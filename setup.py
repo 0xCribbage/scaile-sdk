@@ -14,6 +14,8 @@ setup(
         'requests',  # List of dependencies that need to be installed
         'flask',  # If you're using Flask or any other dependencies
         'pyyaml',  # Example
+        'python-dotenv',
+        'pyyaml'
     ],
     classifiers=[
         'Programming Language :: Python :: 3',

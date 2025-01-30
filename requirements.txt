@@ -3,4 +3,5 @@ flask
 pyyaml
 pytest
 black
-
+python-dotenv
+pyyaml

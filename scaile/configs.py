@@ -5,6 +5,10 @@ import os
 from typing import Dict, Any
 import yaml
 from dotenv import load_dotenv
+import os
+
+class Config:
+    DEBUG = os.getenv("SCAILE_DEBUG", "False").lower() == "true"
 
 class Settings:
     def __init__(self, env: str = "development"):

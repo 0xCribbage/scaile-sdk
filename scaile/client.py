@@ -1,3 +1,4 @@
+from .logging import logger
 import requests
 
 class Client:
@@ -19,26 +20,18 @@ class Client:
             "Content-Type": "application/json"
         }
 
-    def _make_request(self, method: str, endpoint: str, **kwargs):
-        """
-        Handles API requests with error handling.
+    def make_request(self, endpoint, payload):
+        logger.debug(f"Sending request to {endpoint} with payload: {payload}")
 
-        :param method: HTTP method (GET, POST, etc.).
-        :param endpoint: API endpoint to target.
-        :param kwargs: Additional parameters for the request (e.g., data, params).
-        :return: JSON response or raises an error.
-        """
-        url = f"{self.base_url}{endpoint}"
         try:
-            response = requests.request(method, url, headers=self.headers, **kwargs)
+            response = self.session.post(endpoint, json=payload)
             response.raise_for_status()
+            logger.info(f"Successful response from {endpoint}")
             return response.json()
-        except requests.exceptions.HTTPError as e:
-            print(f"HTTP error occurred: {e}")
-            raise
         except Exception as e:
-            print(f"An error occurred: {e}")
+            logger.error(f"Error during API call to {endpoint}: {str(e)}")
             raise
+
 
     def authenticate(self):
         """

@@ -10,6 +10,8 @@ import os
 class Config:
     DEBUG = os.getenv("SCAILE_DEBUG", "False").lower() == "true"
 
+    WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET", "default_secret_key")
+    
 class Settings:
     def __init__(self, env: str = "development"):
         """Initialize settings with the specified environment."""
